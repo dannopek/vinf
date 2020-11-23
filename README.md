@@ -13,10 +13,10 @@ nc localhost 1235
 
 Indexovanie
 ```
-python3 /home/indexer.py
+hdfs dfs -cat /flume/events/* | python3 /home/indexer.py
 ```
 
 Vyhladavanie
 ```
-python3 /home/searcher.py
+python3 /home/searcher.py 
 ```

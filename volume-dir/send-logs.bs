@@ -1,0 +1,26 @@
+# /bin/bash
+# arr=(`find /home/proxy-logy/tmr/ | grep .gz | sort`)
+
+# # run 1: create all models except mentions
+# for i in "${arr[@]}"
+# do
+#     echo "$i"
+#     gzip -c -d "$i" > tmp.logs
+#     # cat tmp.logs | nc localhost 1235
+
+#     file=tmp.logs
+#     while IFS= read line
+#     do
+#         # display $line or do something with $line
+#         echo "$line" | nc localhost 1237
+#         sleep 0.1
+#     done < "$file"
+# done
+
+file=tmp.logs
+while IFS= read line
+do
+    # display $line or do something with $line
+    echo "$line" | nc localhost 1236
+    sleep 0.03
+done < "$file"

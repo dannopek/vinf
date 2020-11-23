@@ -13,10 +13,6 @@ ENV FLUME_HOME=/opt/flume/
 
 ADD hdfs-site.xml /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 
-# # RUN /etc/bootstrap.sh -d
-
-# # RUN hadoop fs -mkdir -p afoj-input
-
 RUN wget https://downloads.apache.org/lucene/java/8.7.0/lucene-8.7.0.tgz
 RUN mkdir /opt/lucene
 RUN tar xvzf lucene-8.7.0.tgz --directory=/opt/lucene --strip 1
@@ -43,12 +39,10 @@ RUN pip3 install setuptools --upgrade
 RUN wget https://downloads.apache.org/lucene/pylucene/pylucene-8.6.1-src.tar.gz
 RUN mkdir /opt/pylucene
 RUN tar xvzf pylucene-8.6.1-src.tar.gz --directory=/opt/pylucene --strip 1
-# todo copy setup.py file
 COPY setup.py /opt/pylucene/jcc/setup.py
 RUN python3 /opt/pylucene/jcc/setup.py build
 RUN python3 /opt/pylucene/jcc/setup.py install
 RUN cd /opt/pylucene
-# todo copy Makefile file
 COPY Makefile /opt/pylucene/Makefile
 RUN make
 RUN make install

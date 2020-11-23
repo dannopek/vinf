@@ -12,7 +12,7 @@ recv_bytes_count = 1024
 
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind(("localhost", 1235))
+sock.bind(("localhost", 1236))
 sock.listen(2)
 with BytesIO() as buffer:
     while True:
