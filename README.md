@@ -19,4 +19,6 @@ hdfs dfs -cat /flume/events/* | python3 /home/indexer.py
 Vyhladavanie
 ```
 python3 /home/searcher.py 
+python3 searcher.py 'must query location Bratislava' --stats method,protocol
+python3 searcher.py 'must query response_code_string 404' 'must termrange date_time 14/Sep/2020:05:40:00 14/Sep/2020:06:40:00'
 ```

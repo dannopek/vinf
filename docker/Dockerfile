@@ -50,5 +50,7 @@ ADD Makefile /opt/pylucene/Makefile
 RUN make
 RUN make install
 
+WORKDIR /home
+
 # # reset entrypoint to not close container in compose
 ENTRYPOINT /etc/bootstrap.sh -d && tail -f /dev/null

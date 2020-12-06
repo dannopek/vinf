@@ -1,16 +1,16 @@
 version: "3.8"
 
 services:
-  flume2:
+  flume:
     build: ./docker/
     volumes: 
      - ./volume-dir:/home/
     ports:
-      - 8100:50070
-      - 8106:50075
-      - 8101:8088
-      - 8102:8080 
-      - 8103:8042 
-      - 8104:8081 
-      - 8105:19888 
-    command: /opt/flume/bin/flume-ng agent -n agent -c conf -f /home/hadoop.conf -Dflume.root.logger=INFO,console #tail -f /dev/null
+      - 9100:50070
+      - 9106:50075
+      - 9101:8088
+      - 9102:8080 
+      - 9103:8042 
+      - 9104:8081 
+      - 9105:19888 
+    #command: /opt/flume/bin/flume-ng agent -n agent -c conf -f /home/hadoop.conf -Dflume.root.logger=INFO,console #tail -f /dev/null
